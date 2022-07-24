@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ThemeProvider } from 'styled-components/native'
 import { darkTheme } from './theme/dark'
 import { lightTheme } from './theme/light'
@@ -10,9 +11,11 @@ export default function App() {
   const isDark = colorScheme === 'dark'
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <StatusBar style={isDark ? 'light' : 'dark'} />
-      <Calculator />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <StatusBar style={isDark ? 'light' : 'dark'} />
+        <Calculator />
+      </ThemeProvider>
+    </SafeAreaProvider>
   )
 }
