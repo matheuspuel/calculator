@@ -1,6 +1,6 @@
 # Calculator
 
-Simple calculator using styled-components.
+Simple calculator developed in React Native using typescript and styled-components.
 
 With light/dark themes according to the device settings.
 
